@@ -4,6 +4,8 @@
 
 ## 启动
 
+> 仓库：<https://github.com/IceSakura0001/music-whale> · 下载：<https://github.com/IceSakura0001/music-whale/releases/tag/v1.2.0>
+
 **桌面应用（推荐）**：双击 `启动音乐工作台（应用）.cmd`，或直接运行 `release-installer\win-unpacked\Music Whale.exe`。第一次需要 `npm install` 安装 Electron（约 100 MB）；之后双击桌面快捷方式即可。应用会复用已在运行的本机服务，没有的话自己启动一个；项目、采样库、MCP 与网页版共用同一个 `.local` 数据目录。
 
 **浏览器版**：在此目录运行 `npm run dev`，打开 http://127.0.0.1:4317 。Windows 也可双击 `启动音乐工作台.cmd`，服务在后台运行；`停止音乐工作台.cmd` 可关闭。首次启动载入原创四轨示例；项目状态自动写入 `.local/current.json`，不要删除，除非已导出备份。
