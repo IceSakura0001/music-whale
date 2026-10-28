@@ -1,0 +1,63 @@
+{
+  "name": "music-whale",
+  "productName": "Music Whale",
+  "version": "1.2.0",
+  "description": "Music Whale 鲸歌：带钢琴卷帘、鼓机、FluidR3 采样音源与自定义音色的桌面音乐工作台",
+  "author": "Muse Grid",
+  "main": "app/main.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.mjs",
+    "app": "node scripts/launch-app.mjs",
+    "app:build": "electron-builder --win nsis --x64",
+    "bank": "node scripts/build-bank.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "validate": "node scripts/validate-artifact.mjs",
+    "mcp": "node mcp-stdio.mjs"
+  },
+  "build": {
+    "appId": "com.musicwhale.desktop",
+    "productName": "Music Whale",
+    "asar": false,
+    "directories": {
+      "output": "release-installer",
+      "buildResources": "build"
+    },
+    "files": [
+      "app/**/*",
+      "src/**/*",
+      "web/**/*",
+      "assets/**/*",
+      "server.mjs",
+      "package.json",
+      "README.md",
+      "LICENSE",
+      "AGENTS.md"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "artifactName": "Music Whale Setup ${version}.exe",
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Music Whale 鲸歌"
+    }
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "electron": "^45.1.0",
+    "electron-builder": "^26.18.0"
+  }
+}

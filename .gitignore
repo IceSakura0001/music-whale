@@ -1,0 +1,10 @@
+﻿dist/
+site.tar.gz
+.local/
+test-results/
+*.zip
+node_modules/
+release/
+release-installer/
+*.log
+.DS_Store
